@@ -223,6 +223,18 @@
         margin: 0 2rem;
       }
 
+      .track-order button {
+        padding: 13px;
+        border: none;
+        border-radius: 10px;
+        background: #378ADD;
+        color: white;
+        font-size: 15px;
+        font-weight: 600;
+        cursor: pointer;
+        font-family: 'DM Sans', sans-serif;
+        transition: background 0.2s;
+      }
       /* CUSTOM PROJECT */
       #custom-project {
         background: #042C53;
@@ -560,6 +572,12 @@
       </div>
     </div>
 
+    <div class="track-order" style="text-align: center;">
+      <h2 style="margin-bottom: 20px;">Wanna track an order click here!</h2>
+      <a href="track-order.html" style="font-size:14px; color:#185FA5; font-weight:500; text-decoration:none;"><button>Track Order</button></a>
+
+    </div>
+
     <!-- CUSTOM PROJECT -->
     <section id="custom-project">
       <h2>Got a Custom Idea? 💡</h2>
@@ -587,7 +605,7 @@
       <button onclick="toggleCart()" class="close-btn">Close</button>
     </div>
 
-    <script src="cart.js"></script>
-    <script src="custom-idea.js"></script>
+    <script type="module"  src="cart.js"></script>
+    <script type="module" src="custom-idea.js"></script>
   </body>
 </html>

@@ -17,7 +17,7 @@ document.getElementById("ideaForm").addEventListener("submit", function (e) {
   const params = new URLSearchParams({ name, email, idea });
 
   fetch(
-    "https://script.google.com/macros/s/AKfycbyv6F7ONyKZ9mih0eEup1Hr5Mrz639-4nmeW0KxbQjeYnXCz4qQvZISWnx4r0R5BkVixw/exec?",
+    "https://script.google.com/macros/s/AKfycbwp0Mise2QG0BCtgNp59nAXq6k8w070W1Sz9lBdjtxxzhgoOysD0j4h5jeJr41-vzR2Sg/exec?",
     {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
