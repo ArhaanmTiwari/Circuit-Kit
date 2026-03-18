@@ -108,7 +108,7 @@
     <script type="module" src="cart.js"></script>
     <script type="module" src="webhook.js"></script>
     <script type="module" src="https://checkout.razorpay.com/v1/checkout.js"></script>
-    <script>
+    <script type="module">
       // Load cart into checkout page
       function loadCheckoutCart() {
         const cart = JSON.parse(localStorage.getItem("cart")) || [];
@@ -140,6 +140,34 @@
       }
 
       loadCheckoutCart();
+
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/12.10.0/firebase-app.js";
+  import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/12.10.0/firebase-auth.js";
+  import { getFirestore, doc, getDoc } from "https://www.gstatic.com/firebasejs/12.10.0/firebase-firestore.js";
+
+  const app = initializeApp({
+    apiKey: "AIzaSyBsvQD_h8-UCpt3FjcJC5rCFkoGagCmZo4",
+    authDomain: "arhaan-tech.firebaseapp.com",
+    projectId: "arhaan-tech",
+    storageBucket: "arhaan-tech.firebasestorage.app",
+    messagingSenderId: "378370431321",
+    appId: "1:378370431321:web:c3e01ee291112ec24e9448"
+  });
+
+  const auth = getAuth(app);
+  const db = getFirestore(app);
+
+  onAuthStateChanged(auth, async (user) => {
+    if (!user) return;
+    const snap = await getDoc(doc(db, 'customers', user.uid));
+    if (snap.exists()) {
+      const data = snap.data();
+      if (data.name) document.getElementById('name').value = data.name;
+      if (data.phone) document.getElementById('phone').value = data.phone;
+      if (data.address) document.getElementById('address').value = data.address;
+      if (data.email) document.getElementById('email').value = data.email;
+    }
+  });
     </script>
   </body>
 </html>
