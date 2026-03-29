@@ -23,7 +23,7 @@ window.BuyNow = function(productName, price) {
   });
 
   localStorage.setItem("cart", JSON.stringify(cart));
-  window.location.href='checkout.html
+  window.location.href='checkout.html;
 }
 
 // Load cart items into sidebar
